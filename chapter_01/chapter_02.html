@@ -10,16 +10,16 @@
 </head>
 <body>
 
-<script>
+<!-- <script>
     function run(){
         console.log('3초 후 실행')
     }
     console.log('시작')
     setTimeout(run, 3000);
     console.log('끝')
-</script>
+</script> -->
 
-<script>
+<!-- <script>
     function oneMore(){
         console.log('one more')
     }
@@ -37,6 +37,18 @@
     }
 
     setTimeout(run, 5000);
+</script> -->
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    axios.get('https://www.zerocho.com/api/get')
+        .then((result) =>{
+            console.log(result);
+            console.log(result.data);
+        })
+        .catch((error) => {
+            console.log(error)
+        })
 </script>
 
 </body>

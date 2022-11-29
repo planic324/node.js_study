@@ -59,6 +59,36 @@ a = 30; // 쌉가능:)
 ### 화살표 함수
 주의사항 확인하기
 
+### 프로미스 : 콜백 헬이라고 불리는 지저분한 자바스크립트 코드의 해결책
+- 프로미스 : 내용이 실행은 되었지만, 결과를 아직 반환하지 않는 객체
+- Then을 붙이면 결과를 반환함
+- 실행이 완료되지 않으면 완료된 후 Then 내부 함수가 실행됨
+
+- Resolve(성공된린턴값) > then으로 연결
+- Reject(실패된린턴값) > catch으로 연결
+- Finally 부분은 무조건 실행됨
+
+### async/await
 
 
 ## 2.3 프런트엔드 자바스크립트
+### 2.3.1 AJAX
+AJAX 비동기적 웹 서비스를 개발할때 사용하는 기법.
+이름에는 XML이 있지만, 최근에는 JSON을 많이 사용한다.
+
+보통 요청은 JQuery나 axios 같은 라이브를 이용해서 보낸다.
+
+사용방법
+```
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script> // 링크만 걸어주면 된다.
+<script>
+    axios.get('https://www.zerocho.com/api/get')
+        .then((result) =>{
+            console.log(result);
+            console.log(result.data);
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+</script>
+```
