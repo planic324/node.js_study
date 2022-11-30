@@ -34,7 +34,6 @@ function printWithDelay(print, timeout){
 }
 printWithDelay(() => console.log('asyne callback'), 2000)
 
-
 // callback hell ex
 class UserStorage{
     loginUser(id, password, onSuccess, onError){
@@ -81,3 +80,5 @@ UserStorage.loginUser(
         console.log(error)
     }
 )
+
+// callback Hell을 벗어나기 위해선, promise로 해결하기
