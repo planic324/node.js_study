@@ -30,7 +30,7 @@ class UserStorage{
     }
 }
 
-const UserStorage = new UserStorage();
+const userStorage = new UserStorage();
 const id = prompt('enter you id'); // 데이터를 받아오는 거
 const password = prompt('enter you password'); // 데이터를 받아오는거
 
