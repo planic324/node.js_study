@@ -21,7 +21,7 @@ module.exports = {
 };
 
 // 참조하는 방법
-const {odd, even} = require('./파일명');
+const {odd, even} = require('./파일명'); // node에서 제공하는 함수 'require'
 
 function checkOddOrEven(num){
     if(num % 2){
@@ -30,4 +30,4 @@ function checkOddOrEven(num){
     return even;
 }
 
-module.exports = checkOddOrEven
+module.exports = checkOddOrEven;
