@@ -43,4 +43,34 @@ module.exports = checkOddOrEven; // '파일명'을 참조해서 가져온 것을
 ## 3.4 노드 내장 객체 알아보기
 > 이 장은 어떠한 것들이 있는지만 알아보고, 추 후 필요한 경우 사전과 같이 확인하는 용도로 사용하면 좋다.
 
+### 3.4.4 __filename, __dirname
+노드에서는 파일 사이에 모듈 관계가 있는 경우가 많으므로 때로는 현재 파일의 경로나 파일명을 알아야 합니다.
+__filename : 현재의 파일 위치를 알 수 있다.
+__dirname : 현재 파일의 노드를 알 수 있다.
+
+### 3.4.5 this
+Javascript = this = window 이다. (global)
+하지만, node에서 의 this는 조금 다른다.
+
+```
+// this를 함수 밖에서 선언하는 경우
+console.log(this);
+
+// 빈 객체 {} 가 노출 === {} != global
+
+
+// this를 함수 안에서 선언하는 경우
+function a() {
+    console.log(this === global);
+}
+a();
+// global확인 === global이 맞다.
+
+// 함수 밖에서 global을 시키고 싶은 경우
+console.log(this === module.exports);
+// 이경우 global이 된다.
+```
+
+전역 스코프만! module.exports이다.
+
 ## 3.5 노드 내장 모듈 사용하기
