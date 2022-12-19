@@ -48,7 +48,9 @@ module.exports = checkOddOrEven; // '파일명'을 참조해서 가져온 것을
 __filename : 현재의 파일 위치를 알 수 있다.
 __dirname : 현재 파일의 노드를 알 수 있다.
 
-### 3.4.5 this
+### 3.4.5 module, exports, require
+
+- this
 Javascript = this = window 이다. (global)
 하지만, node에서 의 this는 조금 다른다.
 
@@ -72,5 +74,19 @@ console.log(this === module.exports);
 ```
 
 전역 스코프만! module.exports이다.
+
+### 3.4.6 process
+process 객체는 현재 실행되고 있는 노드 프로세스에 대한 정보를 담고 있습니다.
+
+- process.cwd : noderk 현재 실행되는 위치
+- process.env : 시스템 환경 변수들이 들어있는 객체
+ - 비밀키를 보관하는 용도로 쓰임
+ - 환경변수는 process.env로 접근 가능
+ - 일부 환경 변수는 노드 실행 시 영향을 미침
+ 
+- process.nextTick(콜백)
+ - 이벤트 루프가 다른 콜백 함수들보다 nextTick의 콜백 함수를 우선으로 처리하도록 만듭니다.
+ - nextTick > promise.then ( == microtask)가 우선 실행된다.
+
 
 ## 3.5 노드 내장 모듈 사용하기
